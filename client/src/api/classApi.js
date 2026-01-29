@@ -41,4 +41,10 @@ export const classApi = {
     const response = await api.get(`/classes/${classId}/statistics`);
     return response.data;
   },
+
+  // Join a class
+  joinClass: async ({ enrollmentKey }) => {
+    const response = await api.post("/classes/join", { enrollmentKey });
+    return response.data;
+  },
 };

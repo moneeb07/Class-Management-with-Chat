@@ -130,3 +130,25 @@ export const useDeleteClass = () => {
     },
   });
 };
+
+// Join class mutation
+export const useJoinClass = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: classApi.joinClass,
+    onSuccess: (data) => {
+      // Invalidate classes list to show new class
+      queryClient.invalidateQueries({ queryKey: classKeys.lists() });
+      queryClient.invalidateQueries({ queryKey: classKeys.all });
+      toast.success("Successfully joined class!");
+      return data;
+    },
+    onError: (error) => {
+      const errorMessage =
+        error.response?.data?.message || "Failed to join class";
+      toast.error(errorMessage);
+      throw error;
+    },
+  });
+};
