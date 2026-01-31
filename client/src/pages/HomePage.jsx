@@ -1,7 +1,9 @@
 import React from "react";
 import { useAuth } from "../hooks/auth/useAuth";
 import { useNavigate } from "react-router-dom";
+
 export default function HomePage() {
+  const navigate = useNavigate();
   return (
     <div>
       <button
