@@ -13,6 +13,7 @@ const errorHandler = require("./middleware/errorHandler");
 // Routes
 const authRoutes = require("./routes/authRoutes");
 const classRoutes = require("./routes/classRoutes");
+const chatRoutes = require("./routes/chatRoutes");
 
 const app = express();
 // Connect DB
@@ -63,6 +64,7 @@ app.get("/api/health", (req, res) => {
 // API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/classes", classRoutes);
+app.use("/api/chat", chatRoutes);
 
 // Error Handler
 app.use(errorHandler);
