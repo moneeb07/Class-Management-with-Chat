@@ -12,7 +12,7 @@ const server = http.createServer(app);
 // 2. Initialize Socket.io
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // URL of your Client/React app
+    origin: process.env.CLIENT_URL, // URL of your Client/React app
     methods: ["GET", "POST"],
   },
 });
