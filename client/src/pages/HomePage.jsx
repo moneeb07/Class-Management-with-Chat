@@ -12,7 +12,7 @@ export default function HomePage() {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600 text-white">
               <BookOpen size={20} />
             </div>
-            <span className="text-xl font-bold text-gray-900">EduFlow</span>
+            <span className="text-xl font-bold text-gray-900">Classroom Ai</span>
           </div>
           <div className="flex items-center gap-4">
             <Link
